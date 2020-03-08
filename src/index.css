@@ -1,13 +1,105 @@
+html,
 body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: system-ui;
+  font-weight: 200;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
+  grid-template-areas:
+    "h h h h h h"
+    "r m m m m m"
+    "n m m m m m"
+    "o m m m m m"
+    "p m m m m m"
+    "s s s s s s";
+
+  background-color: #073b4c;
+  color: white;
+  text-align: center;
+}
+
+
+.header {
+  grid-area: h;
+}
+
+.search-restaurant {
+  grid-area: r;
+
+  background: #118ab2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-flow: wrap;
+}
+
+.top-restaurant {
+  grid-area: n;
+
+  background: #118ab2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-flow: wrap;
+}
+
+.countrylist-restaurant {
+  grid-area: o;
+
+  background: #118ab2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-flow: wrap;
+}
+
+.restaurant-list {
+  grid-area: m;
+  background: #06d6a0;
+  overflow: scroll;
+}
+
+select{
+  width: 70%;
+  margin: 10px;
+}
+
+.list-item {
+  width: 100%;
+  height: 70px;
+  margin: 15px;
+  border-radius: 10px;
+  background: #ffd166;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item > p {
+  background-color: #073b4c;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.empty {
+  grid-area: p;
+}
+
+.footer {
+  grid-area: s;
 }
